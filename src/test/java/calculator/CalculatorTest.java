@@ -1,6 +1,7 @@
 package calculator;
 
 import org.example.calculator.Calculator;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,11 @@ public class CalculatorTest {
         System.out.println("S-a intrat in hook-ul de before all...");
 
         calculator = new Calculator();
+    }
+
+    @AfterEach
+    public void cleanup() {
+        System.out.println("S-a intrat in hook-ul de after each...");
     }
 
     // Adunarea ar trebui sa fie corecta pt numere intregi
