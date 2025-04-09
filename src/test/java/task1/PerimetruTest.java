@@ -14,6 +14,7 @@ public class PerimetruTest {
     private Perimetru perimetru;
 
     /* Hook inainte de fiecare test */
+    /// GIVEN test instance - definire si initializare a prerechizitelor necesare rularii unui test
     @BeforeEach
     public void init() {
         System.out.println("S-a intrat in hook-ul de before each...");
@@ -34,9 +35,11 @@ public class PerimetruTest {
         // se poate defini diametru ca variabila globala a metodei de test
         // astfel incat sa fie pasat la definirea celor 2 variabile de rezultat
 
+        /// WHEN test action - se calculeaza, definesc si initializeaza rezultatele de comparat (asteptat vs actual)
         double rezultatActual = perimetru.calculeazaPerimetru(2.0);
         double rezultatAsteptat = 2.0 * Math.PI;
 
+        /// THEN test results - se aserteaza si verifica din multiple puncte de vedere validitatea rezultatelor
         assertEquals(rezultatAsteptat, rezultatActual, 0.0001);
     }
 
